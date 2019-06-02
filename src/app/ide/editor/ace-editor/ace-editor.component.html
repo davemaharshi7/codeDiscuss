@@ -1,0 +1,111 @@
+
+<div class="container-fluid ">
+   <!-- Page Heading -->
+        <div class="row p-2">
+          <div class="col-lg">
+              <h1 class="page-header">
+                  IDE <small>Code, Compile & Run</small>
+              </h1>
+          </div>
+      </div>
+       <div class="container-fluid">
+           
+
+         <div class="row">
+            <div class="col-lg">
+              <div class="card">
+                <!-- For Editor Config -->
+                <h5 class="card-header">
+                  <div class="row">
+                    <div class="col-md-3 py-1 mt-1">
+                        <select class="browser-default custom-select" (change)="onLanguageChange()" [(ngModel)]="lang" >
+                            <option value="C">C</option>
+                            <option value="C++">C++</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3 py-1 mt-1">
+                        <select class="browser-default custom-select" (change)="onThemeChange()" [(ngModel)]="theme">
+                            <option value="ace/theme/xcode">Xcode</option>
+                            <option value="ace/theme/clouds" > Clouds</option>
+                            <option value="ace/theme/dracula">Dracula</option>
+                            <option value="ace/theme/terminal">Terminal</option>
+                            <option value="ace/theme/twilight">Twilight</option>
+                            <option value="ace/theme/monokai">Monokai</option>
+                            <option value="ace/theme/eclipse">Eclipse</option>
+                            <option value="ace/theme/github">Github</option>
+                            <option value="ace/theme/gob">Gob</option>
+                            <option value="ace/theme/cobalt">Cobalt</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 text-center">
+                            <button class="btn btn-light">
+                              <i class="fa fa-download"></i> Download Code
+                            </button>
+                    </div>
+                    <div class="col-md-3 text-center">          
+                            <button class="btn btn-light">
+                              <i class="fa fa-upload"></i> Upload your Code
+                            </button>
+
+                    </div>
+                  </div>  
+                </h5>
+                <!-- For main Editor -->
+                <div class="card-body">
+                  <label>CODE</label>
+                  <div class="outline">
+                          <pre id="editor"></pre>        
+                  </div>
+                </div>
+                <!-- For Code Execution -->
+                <h5 class="card-header text-center">
+                  <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-light" id="toggle">
+                                <i class="fa fa-plus" aria-hidden="true"></i>  Custom Input
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-deep-orange"  [disabled]="buttonStatus" (click)="onRunCode()">
+                        <span class="fa fa-cog"></span>
+                        Compile And Run</button>
+                      </div>
+                    
+                  </div>
+                </h5>
+              </div>    
+             </div>
+         </div>
+         <!-- For Custom Input Space -->
+         <div class="row">
+           <div class="col-lg">
+              <div class="panel-body" id="input" style="display:none;padding: 13px 15px 0px 15px;">
+                  <label >INPUT</label>
+                  <div class="form-group">
+                      <textarea  rows="5" class="form-control" [(ngModel)]="input"></textarea>
+                  </div>
+          </div>
+          <div class="panel-body" *ngIf="output "  style="padding: 13px 15px 0px 15px;">
+              <label >OUTPUT</label>
+              <div class="form-group">
+                  <textarea  rows="5" class="form-control" [(ngModel)]="output" disabled></textarea>
+              </div>
+          </div>
+          <div class="panel-body" *ngIf="error " style="padding: 13px 15px 0px 15px;">
+              <label >ERROR</label>
+              <div class="form-group">
+                  <textarea  rows="5" class="form-control" [(ngModel)]="error" disabled></textarea>
+              </div>
+          </div>
+           </div>
+         </div>
+          
+       </div>
+         
+         
+      </div>
+      <!-- /.container-fluid -->
+ 

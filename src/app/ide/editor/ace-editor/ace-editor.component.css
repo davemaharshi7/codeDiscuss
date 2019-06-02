@@ -1,0 +1,33 @@
+
+body{
+  background-color: #f5f5f5;
+}
+pre {
+  white-space: pre;
+}
+
+.outline{
+  border: 1px solid rgba(0,0,0,.03);
+  border-radius: 7px;
+  
+}
+.customstyle{
+  font-size: 80%;
+}
+#editor{
+  font-size:16px;
+  height:512px;
+  margin-bottom: 0px;
+  border-radius: 7px;
+
+}
+.btn .btn-yellow{
+  background-color: #e89980;
+
+}
+
+
+.btn .btn-light{
+  background-color:  #666666;
+  
+}
